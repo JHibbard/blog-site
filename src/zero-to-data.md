@@ -18,7 +18,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     <div>Open source self-hosted Delta Sharing server</div>
     <br/>
     <a href="./data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/index.html">
-      <img src="file:///Users/jameshibbard/WebstormProjects/blog-site/book/data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/image1.png">
+      <img src="./data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/image1.png">
     </a>
   </div>
   <div>
