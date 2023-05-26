@@ -6,3 +6,6 @@ src = "src"
 
 [output.html.fold]
 enable = true
+
+[build]
+build-dir = "docs"                # the directory where the output is placed
