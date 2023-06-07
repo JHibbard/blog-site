@@ -1,0 +1,3 @@
+# Contributors
+
+Are you interested in becoming a contributor to Zero to Data? Maybe you have a tutorial or story from the frontlines you think others would benefit from? The submission process couldn’t be easier! Just open a PR on the [Zero to Data repo]() with your article or tutorial in markdown format. Submittors should also include a short 1-2 sentence description of the article for the reviewer.

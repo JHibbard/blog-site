@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Delta Lake &amp; Ray for ML</title>
+        <title>Deltaray Part 1</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
-        <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "../../";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../../zero-to-data.html">Zero to Data</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">Data Engineering</li><li class="chapter-item "><div><strong aria-hidden="true">1.</strong> Rust</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/index.html"><strong aria-hidden="true">1.1.</strong> Kotosiro Delta Sharing Server</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Arrow</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.</strong> Python</div></li><li class="chapter-item "><div><strong aria-hidden="true">4.</strong> Delta Sharing</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/index.html"><strong aria-hidden="true">4.1.</strong> Kotosiro Delta Sharing Server</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">Data Science and AI</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Ray</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../data-science-and-ai/2023-03-23-deltaray-part1/index.html" class="active"><strong aria-hidden="true">5.1.</strong> Delta Lake & Ray for ML</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><div>Contributors</div></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../zero-to-data.html">Zero to Data</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">Dask</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">DataFusion</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">Delta Sharing</li><li class="chapter-item "><a href="../delta-sharing/kotosiro-delta-sharing-server.html"><strong aria-hidden="true">1.</strong> Kotosiro Delta Sharing Server</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">Polars</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">Ray</li><li class="chapter-item expanded "><a href="../ray/delta-ray-part1.html" class="active"><strong aria-hidden="true">2.</strong> Deltaray Part 1</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">Spark</li><li class="spacer"></li><li class="chapter-item affix "><a href="../contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -115,7 +115,7 @@
                     <h1 class="menu-title"></h1>
 
                     <div class="right-buttons">
-                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -145,6 +145,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="running-ml-workflows-with-delta-lake-and-ray"><a class="header" href="#running-ml-workflows-with-delta-lake-and-ray">Running ML Workflows with Delta Lake and Ray</a></h1>
+<p><img src="delta-ray-part1-image1.png" alt="" /></p>
 <h2 id="part-1-reading-delta-lake-with-ray"><a class="header" href="#part-1-reading-delta-lake-with-ray">Part 1: Reading Delta Lake with Ray</a></h2>
 <p>Delta Lake and Ray are two open-source technologies that can be used to build scalable and reliable data processing and machine learning pipelines. This article will explain the role each of these tools play and show you how to use the new <a href="https://github.com/delta-incubator/deltaray"><code>deltaray</code></a> library to easily integrate the two technologies. Coming soon in part two of this blog, will be how to use this integration to run ML workflows with Ray and Delta Lake. <a href="https://github.com/delta-incubator/deltaray/blob/main/notebooks/deltaray-demo.ipynb">This notebook</a> contains all the code used in this blog post if you want to follow along.</p>
 <p>Delta Lake continues to be the most reliable, scalable, and performant table storage format for the lakehouse. It’s a perfect choice for ML applications as it enables the storage of large amounts of structured and unstructured data, supports data quality checks in the form of constraints, and manages metadata. Delta Lake also provides features for versioning data and for handling data consistency and transactional guarantees.</p>
@@ -224,10 +225,13 @@ ds.show()
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../delta-sharing/kotosiro-delta-sharing-server.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="../contributors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -235,10 +239,13 @@ ds.show()
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../data-engineering/2023-04-24-open-source-selfhosted-delta-sharing-server/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../delta-sharing/kotosiro-delta-sharing-server.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="../contributors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -251,13 +258,13 @@ ds.show()
         </script>
 
 
-        <script src="../../elasticlunr.min.js"></script>
-        <script src="../../mark.min.js"></script>
-        <script src="../../searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
-        <script src="../../book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 

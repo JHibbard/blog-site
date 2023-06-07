@@ -1,5 +1,7 @@
 # Running ML Workflows with Delta Lake and Ray
 
+![](delta-ray-part1-image1.png)
+
 ## Part 1: Reading Delta Lake with Ray
 
 Delta Lake and Ray are two open-source technologies that can be used to build scalable and reliable data processing and machine learning pipelines. This article will explain the role each of these tools play and show you how to use the new [`deltaray`](https://github.com/delta-incubator/deltaray) library to easily integrate the two technologies. Coming soon in part two of this blog, will be how to use this integration to run ML workflows with Ray and Delta Lake. [This notebook](https://github.com/delta-incubator/deltaray/blob/main/notebooks/deltaray-demo.ipynb) contains all the code used in this blog post if you want to follow along.
